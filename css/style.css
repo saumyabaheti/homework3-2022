@@ -1,273 +1,82 @@
-/***** STARTER CODE - DO NOT CHANGE *****/
-
-html{
-  scroll-behavior: smooth;
+.grid > div{
+	max-height:40px;
 }
 
-body{
-  background-color: #737373;
-  font-size: 18px;
-  margin: 0;
-  padding: 0;
-}
+.grid{
+	display: grid;
+	grid-row-gap: 5px;
+	grid-column-gap: 5px;
+	grid-template-columns: 500px;
 
-h1{
-  font-size: 50px;
-  line-height: 1;
-  padding: 50px 0;
-  text-align: center;
-  color:white;
-}
+	/* Play with: */
+	/* justify-content:; */
+	/* justify-items:;  */
+	/* align-items:; */
+	/* align-content:; */
+ }
 
-h2{
-  font-size: 32px;
-  line-height: 1.5;
-}
-
-nav{
-  background-color: #ddd;
-  padding: 25px 10px;
-  text-align: left;
-}
-
-nav a{
-  color: black;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-nav a:hover{
-
-  text-decoration-line: underline;
-  text-decoration-style: wavy;
-
-}
-
-nav ul{
-  list-style-type: none;
-}
-
-nav li{
-  display: inline;
-  margin-right: 5%;
-}
-
-header p{
-  color: white;
-  font-size: 24px;
-  padding: 0 100px;
-  text-align: center;
-}
-
-.text{
-  margin: auto;
-  align-self: center;
-  max-height: 25vh;
-  overflow: scroll;
-  background-color: rgba(255, 255, 255, .8);
-  border: 10px solid black;
-  padding: 30px;
-}
-
-footer{
-  background-color: black;
-  color: white;
-  padding: 15px 0;
-  text-align: center;
-}
-
-footer a,
-footer a:visited{
-  color: white;
-}
-/*****  End Starter Code ****/
-
-/* Requirement 1 code here*/
-
-/* Requirement 2 code here*/
-
-
-
-a.skip{
-  background: white;
-  padding: 6px;
-  -webkit-transition: top 1s ease-out;
-  transition: left 1s ease-out;
-  z-index: 1;
-  position: absolute;
-  left: -500px;
  
-  /* Requirement 3 code here*/
-  
-}
-
-nav a:focus{
-  outline: none;
-  border-top: 2px solid yellow;
-}
-
-/* Requirement 4 code here*/
 
 
-.container{
+@media screen and (min-width: 776px){
 
-  display: grid;
-  grid-template-columns: 1fr 5fr 1fr;
-  row-gap: 30px;
+	body{
+		background-color: yellow;
+	}
 
-  /* Requirement 5 code here*/
+	.grid > div{
+		max-height:none;
+	}
 
-}
+	/* Make this a two column grid. */
+	.grid{
+		grid-template-columns: 300px 300px;
 
-/* Requirements 6-10 here: */
 
-.intro {
 
-  background-image: url('../images/header.jpg');
-  min-height: 400px;
-  background-color: #707070;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+		
+		/* Play with: */
+		/* justify-content:; */
+		/* align-items:;  */
 
-}
 
-.about, .clients, .method, .contact {
+		
+ 	}
 
-  grid-column: 2 / 3;  
+ 	.item1{
+ 		 /* Span the entire first row  */
+		
+		  grid-column: 1 / 3;
+ 	}
+	
+	.item2{
 
-}
+		grid-row: 2 / span 3;
+		/* Start in row 2 and span 3 rows */
+		/* grid-row:; */
 
-.about {
-
-  grid-row: 1 / 2;
-}
-
-.clients {
-
-  grid-row: 2 / 3;
+	}
 
 }
+@media screen and (min-width: 1120px){
+	body{
+		background-color: green;
+	}
 
-.method {
+	/* Make this a three column grid using fr. */
+	.grid{
 
-  grid-row: 3 / 4;
+		grid-template-columns:  1fr 1fr 1fr;
 
-}
-
-.contact {
-
-  grid-row: 4 / 5;
-
-}
-
-
-.about-image {
-
-  grid-row: 1 / 2;
-
-}
-
-.clients-image {
-
-  grid-row: 2 / 3;
-
-}
-
-.method-image {
-
-  grid-row: 3 / 4;
-
-}
-
-.contact-image {
-
-  grid-row: 4 / 5;
-
-}
+		/* Why don't we bother with justify here? */
+	}
+	.item3{
+		/* Start in row 2 and span two rows 
+		   Start in column 2 and span two columns */
 
 
-img {
+		/* What happens if you try to span 3 columns */
+	}
 
-  width: 100%;
-
-}
-
-.about-image, .clients-image, .method-image, .contact-image {
-
-  grid-column: 1 / span 3;
-  max-height: 500px;
-  overflow: hidden;
-
-}
-
-
-@media screen and (min-width: 700px){
-  nav{
-    padding-top: 35px;
-    text-align: right;
-
-  }
-
-  nav li{
-    margin-left: 5%;
-    margin-right:0;
-    
-  }
-
-  a.skip:focus {
-
-    position: absolute;
-    left: 500px; 
-    top: 20px;
-
-  }
-
-  .container {
-
-    display: grid;
-    grid-template-columns: 50px auto 500px auto 50px;
-    /* grid-row: 300px; */
-    /* grid-template-rows: repeat(4 300px); */
-    
-  }
-
-  .about, .method, .clients-image, .contact-image {
-
-    grid-column: 3 / span 2;
-
-  }
-
-  .clients, .contact, .about-image, .method-image {
-
-    grid-column: 2 / span 2;
-
-  }
-
-
-  /* Requirements 12-15 here: */
-
-}
-
-/** Code for prefers reduced motion **/
-/* Make no changes below this line.
-   *************************************** 
-   */
-@media screen and (prefers-reduced-motion: reduce){
-  /*Turn off scroll*/
-  html{
-    scroll-behavior: auto; /* Removes scroll animation */
-  }
-
-  /*Turn off transition*/
-  a.skip {
-    -webkit-transition: initial; /* sets to default setting */
-    transition: initial; /* sets to default setting */
-  }
-
-  /*Turn off parallax*/
-  .intro{
-    background-attachment: initial;
-  }
+	
 }
